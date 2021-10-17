@@ -1,0 +1,25 @@
+{
+  "name": "vimconf-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec 'npx ts-node' ./src/bin.ts ./slides.md",
+    "build": "ts-node ./src/bin.ts ./slides.md",
+    "watch": "ts-node ./src/bin.ts ./slides.md --watch",
+    "titles": "nodemon --exec \"clear && rg -N -e '^(#+|---)'\""
+  },
+  "keywords": [],
+  "author": "antonk52",
+  "license": "MIT",
+  "prettier": {},
+  "dependencies": {
+    "@types/node": "^16.9.1",
+    "@types/rimraf": "^3.0.2",
+    "arg": "^5.0.1",
+    "nodemon": "^2.0.12",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}
