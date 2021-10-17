@@ -53,29 +53,12 @@ Why I got into vim
 
 > A perfect editor is the one that doesn't have anything redundant
 > and has everything that I need.
-> If it doesn't have everything that I need,
-> I install a plugin and it has everything that I need.
+> If the editor doesn't have everything that I need,
+> I install a plugin and then the editor has everything that I need.
 > If the plugin does not exist, I can write my own plugin
 > and the editor has everything that I need.
 
 by Sorax
-
-
-### Vim proverbs that we will talk about
-
-- The documentation is better than you imagine
-- If it feels hard, there is probably a better way
-- Don't seek mastery, seek proficiency
-
-
-[source](https://www.vi-improved.org/vim-proverbs/)
-
-#### Don't seek mastery, seek proficiency
-
-Ie don't strive to learn all the things.
-
-Let's start from learning the things that make our workflow unpleasant.
-
 
 ## Types of plugins
 
@@ -96,7 +79,7 @@ Let's start from learning the things that make our workflow unpleasant.
 
 - Does one thing exceptionally well
 - Accessible
-    - can be used by both vim and neovim
+    - works in both vim and neovim
     - cross platform
 - Low entry bar
     - easy install and setup
@@ -128,12 +111,6 @@ If you're a regexp enjoyer. Than you can try to write your own syntax plugin for
 **TODO**: comment on gitignore with submodule + integration with fzf and telescope
 
 [gitignore-grabber.nvim](https://github.com/antonk52/gitignore-grabber.nvim)
-
-Checkout remote plugins, it allows you to write non native plugins using languages you already know
-
-Neovim lets your write native plugins using lua, which is amazing
-
-If you are coming from javascript than it's straight forward to learn, extremely similar, neovim uses already has familiar libuv for the event loop. So writing performant code should not be a problem.
 
 ### Bad-practices.nvim
 
@@ -253,7 +230,9 @@ if exists("b:did_ftplugin_foo")
 endif
 let b:did_ftplugin_foo = 1
 
-nnoremap <leader>o echo "I only work in this buffer"
+nnoremap <buffer> <leader>o echo "I only work in this buffer"
+
+setlocal number relativenumber
 ```
 
 
@@ -312,7 +291,9 @@ let foo = call foo#bar#baz()
 
 " this is ok ✅
 function! DoStuff() abort
+    " more code
     let foo = call foo#bar#baz()
+    " more code
 endfunction
 
 nnoremap <leader>f <cmd>call DoStuff()<cr>
@@ -452,6 +433,10 @@ $ tree
     - Add repository tags `vim-plugin` / `neovim-plugin`
 - Leverage github templates for issues and pull requests [docs](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)
 - Github actions for linting, tests & conventions checks
+
+### Things we have not figured out yet
+
+- Rolling out breaking changes
 
 ## Outro
 
