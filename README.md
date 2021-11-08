@@ -1,6 +1,6 @@
 # vimconf2021
 
-Slides can be viewed in [`slides.md`](./slides.md)
+Slides can be viewed in [`slides.md`](./slides.md). Slides are from [my talk](https://youtu.be/pkyurqHhlXI) from vimconf2021.
 
 A few people asked what I used for the slides, you can install this repository as a vim plugin and run `require'vimconf2021'.setup()` to start presenting. Buffers are used for slides, to prepopulate buffers in the right order this repository also contains a nodejs script to split a markdown file into multiple files, that can be opened at once as `nvim ./slides/*`, now the plugin function can be called and you can start switching between buffers/slides.
 
