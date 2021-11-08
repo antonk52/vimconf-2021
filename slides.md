@@ -1,14 +1,21 @@
-## Craft your happiness in vim
+## DIY quality of life improvements
 
 ### Myself
 
+- Web & developer tooling
+- Cannot get into mechanical keyboards
+- Write vim plugins when bored
 
-- A software engineer professionally focusing on the web & developer tooling
-- I'd love to get into mechanical keyboards if there were decent ISO layout options
-- About 5 years of vim usage
+### Why
+
+> A perfect editor has nothing redundant and everything that I need.
+> If it doesn't, I install a plugin and it has everything that I need.
+> If the plugin does not exist, I write my own plugin
+> and the editor has everything that I need.
+
+by Sorax
 
 ### Talk
-
 
 Goal:
 
@@ -39,32 +46,11 @@ Prerequisite:
 - Geek out*
 
 
-### Speed
-
-Why I got into vim
-
-
-### Ergonomics
-
-- Accessibility
-
-
-### Flexibility
-
-> A perfect editor is the one that doesn't have anything redundant
-> and has everything that I need.
-> If the editor doesn't have everything that I need,
-> I install a plugin and then the editor has everything that I need.
-> If the plugin does not exist, I can write my own plugin
-> and the editor has everything that I need.
-
-by Sorax
-
 ## Types of plugins
 
 - Theme
 - Syntax
-- Utilitarian
+- Utility
 - Makes friends with external tools
 - LSP
 - Treesitter
@@ -79,7 +65,7 @@ by Sorax
 
 - Does one thing exceptionally well
 - Accessible
-    - works in both vim and neovim
+    - can be used by both vim and neovim
     - cross platform
 - Low entry bar
     - easy install and setup
@@ -94,40 +80,9 @@ by Sorax
 - vim-browserslist
 - gitignore-grabber.nvim
 - bad-practices.nvim
-- coc-cssmodules
+- coc-cssmodules -> cssmodules-language-server
 
-
-
-### Vim-tabber
-
-Experiment with micro plugins [vim-tabber](https://github.com/antonk52/vim-tabber)
-
-### Vim-browserslist
-
-If you're a regexp enjoyer. Than you can try to write your own syntax plugin for some poorly supported syntax. For me it was browserslist. A file where you explicitly specify the browsers that you support which is used by other tools that optimize your code. [vim-browserslist](https://github.com/browserslist/vim-browserslist)
-
-### Gitignore-grabber.nvim
-
-**TODO**: comment on gitignore with submodule + integration with fzf and telescope
-
-[gitignore-grabber.nvim](https://github.com/antonk52/gitignore-grabber.nvim)
-
-### Bad-practices.nvim
-
-Improve your own experience, [bad-practices.nvim](https://github.com/antonk52/bad-practices.nvim)
-
-### coc-cssmodules (coc.nvim)
-
-For me the tipping point was when I came across coc.nvim(not going to comment the name), I noticed that the community tends to lean towards native solutions ie native LSP setup, but hear me out. Me being a web developer means that I should be fairly decent with javascript and coc.nvim being pretty much a fork of vscode's language server plugin which in turn means a few things:
-
-1. We can write native to coc.nvim plugins in javascript/typescript or whatever compiles to javascript
-2. We can fairly easily adapt any vscode plugin to work with my vim setup
-3. We can leverage whole npm ecosystem, there are a ton of packages that can get me faster to where we want to be, the catch is you need to search for them
-
-
-[coc-cssmodules](https://github.com/antonk52/coc-cssmodules)
-
-### What language do we use?
+### Which language to use?
 
 | name           | vim             | neovim |
 | -------------- | --------------- | ------ |
@@ -140,6 +95,9 @@ For me the tipping point was when I came across coc.nvim(not going to comment th
 \* - requires an external dependency
   ie the runtime for the language in which the plugin is written
 
+<!-- 1. We can write native to coc.nvim plugins in javascript/typescript or whatever compiles to javascript -->
+<!-- 2. We can fairly easily adapt any vscode plugin to work with my vim setup -->
+<!-- 3. We can leverage whole npm ecosystem, there are a ton of packages that can get me faster to where we want to be, the catch is you need to search for them -->
 
 ### lua vs vimscript vs vimscript9
 
@@ -176,8 +134,7 @@ Specially if we have lua already and vimscript9 around a corner
 
 #### colors
 
-about directory `colors`
-A directory to create your themes. Ie
+A directory to store themes.
 
 ```
 $ tree
@@ -230,9 +187,7 @@ if exists("b:did_ftplugin_foo")
 endif
 let b:did_ftplugin_foo = 1
 
-nnoremap <buffer> <leader>o echo "I only work in this buffer"
-
-setlocal number relativenumber
+nnoremap <buffer><leader>o echo "I only work in this buffer"
 ```
 
 
@@ -291,9 +246,7 @@ let foo = call foo#bar#baz()
 
 " this is ok ✅
 function! DoStuff() abort
-    " more code
     let foo = call foo#bar#baz()
-    " more code
 endfunction
 
 nnoremap <leader>f <cmd>call DoStuff()<cr>
@@ -312,7 +265,7 @@ doc
 ##### doc - content
 
 ```txt
-*plugin-name.txt*  Does this one thing really well
+*plugin-name.txt*  Does one thing really well
 
 Author:  your-name
 License: LICENSE
@@ -400,7 +353,7 @@ $ tree
 
 ### Lets standardize plugins' APIs
 
-- Always export `setup` function, this will
+- Always export `setup` function
     - Group plugin related settings
     - Easy to load plugin on demand
 
@@ -414,12 +367,15 @@ $ tree
 
 - Does one thing exceptionally well
 - Works out of the box (Sensible defaults)
-- Include vim `docs` (BIG HELP)
+- Include vim `docs`
 - Integration with popular plugins
 - Smooth feature deprecation
 
-### Github good practices
+### Achilles heel of vim plugins
 
+- Backward compatibility / versioning
+
+### Github good practices
 
 - `README.md`
     - Functionality gist + a demo if applicable
@@ -434,13 +390,18 @@ $ tree
 - Leverage github templates for issues and pull requests [docs](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)
 - Github actions for linting, tests & conventions checks
 
-### Things we have not figured out yet
-
-- Rolling out breaking changes
-
 ## Outro
 
-Go make 🔥🔥🔥 plugins & share them
+Go make 🔥🔥🔥 plugins & share them with me
+
+twitter.com/antonk52
+
+or
+
+github.com/antonk52
+
+
+
 
 
 ## Not just yet
@@ -463,10 +424,10 @@ Go make 🔥🔥🔥 plugins & share them
 
 ## References
 
-- [vim proverbs](https://www.reddit.com/r/vim/wiki/vim_proverbs)
 - [learn vim script the hard way](https://learnvimscriptthehardway.stevelosh.com)
+- [vim-tabber](https://github.com/antonk52/vim-tabber)
 - [vim-browserslist](https://github.com/browserslist/vim-browserslist)
 - [bad-practices.nvim](https://github.com/antonk52/bad-practices.nvim)
-- [vim-tabber](https://github.com/antonk52/vim-tabber)
 - [coc-cssmodules](https://github.com/antonk52/coc-cssmodules)
+- [cssmodules-language-server](https://github.com/antonk52/cssmodules-language-server)
 - [configuring issue templates for your repository](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)

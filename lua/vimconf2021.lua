@@ -55,8 +55,8 @@ function M.setup(options)
     vim.cmd('hi StatusLine guifg=#65737e')
 
     -- presentation commands
-    vim.cmd("command! Halp lua require 'antonk52.halp'.halp()")
-    vim.cmd("command! -nargs=? MyCommand lua require 'antonk52.halp'.halp('<args>')")
+    vim.cmd("command! Halp lua require 'vimconf2021'.halp()")
+    vim.cmd("command! -nargs=? MyCommand lua require 'vimconf2021'.halp('<args>')")
     vim.cmd("autocmd BufEnter,BufNew,BufWinEnter * IndentBlanklineDisable")
 
     -- empty command line
